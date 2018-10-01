@@ -1,7 +1,8 @@
-package com.mcfly.ps.PhysicsPack;
+package com.mcfly.ps.PhysicsPack.PhysicsObjPack;
 import android.graphics.*;
 import java.util.*;
 import android.util.*;
+import com.mcfly.ps.PhysicsPack.*;
 
 public class Cube extends PhysicsObj implements Graphic
 {

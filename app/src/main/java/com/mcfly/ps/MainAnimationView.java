@@ -1,5 +1,6 @@
 package com.mcfly.ps;
 import com.mcfly.ps.PhysicsPack.*;
+import com.mcfly.ps.PhysicsPack.PhysicsObjPack.*;
 import android.content.*;
 
 public class MainAnimationView extends PhysicsSurfaceView

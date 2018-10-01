@@ -4,9 +4,9 @@ import java.util.*;
 
 public abstract class PhysicsObj implements Graphic
 {
-	float mass;
+	public float mass;
 	boolean fixed;
-	Vector2 position, velocity, acceleration, Rotation, RotateCenter;
+	public Vector2 position, velocity, acceleration, Rotation, RotateCenter;
 	Vector2 drawPosition;
 	ArrayList<Vector2> forces;
 	

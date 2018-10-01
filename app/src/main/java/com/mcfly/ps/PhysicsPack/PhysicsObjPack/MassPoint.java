@@ -1,6 +1,7 @@
-package com.mcfly.ps.PhysicsPack;
+package com.mcfly.ps.PhysicsPack.PhysicsObjPack;
 import java.util.*;
 import android.graphics.*;
+import com.mcfly.ps.PhysicsPack.*;
 
 public class MassPoint extends PhysicsObj
 {
