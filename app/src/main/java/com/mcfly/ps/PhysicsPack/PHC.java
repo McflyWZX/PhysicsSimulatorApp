@@ -36,6 +36,7 @@ public class PHC
 		
 		for(PhysicsObj obj1 : calcList)
 		{
+			if(obj1.fixed)continue;
 			obj1.upDate();
 		}
 		
