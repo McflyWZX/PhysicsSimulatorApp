@@ -3,6 +3,7 @@ import java.util.*;
 import java.math.*;
 import android.util.*;
 import com.mcfly.ps.PhysicsPack.PhysicsObjPack.*;
+import com.mcfly.ps.PhysicsPack.FieldPack.*;
 
 public class PHC
 {
@@ -10,9 +11,16 @@ public class PHC
 	static double TG, Td;
 	
 	static final ArrayList<PhysicsObj> calcList = new ArrayList<PhysicsObj>();
+	static final ArrayList<Field> fieldList = new ArrayList<Field>();
+	
 	public static void addCalcObj(PhysicsObj obj)
 	{
 		calcList.add(obj);
+	}
+	
+	public static void addCalcObj(Field f)
+	{
+		fieldList.add(f);
 	}
 	
 	public static void run()
@@ -32,7 +40,20 @@ public class PHC
 				
 				//obj1.upDate();
 			}
+			
+			for(Field f : fieldList)
+			{
+				if(obj1.position.getX() < f.endP.getX()
+				&& obj1.position.getX() > f.startP.getX()
+				&& obj1.position.getY() < f.endP.getY()
+			    && obj1.position.getY() > f.startP.getY())
+				{
+					f.addForceTo(obj1);
+				}
+			}
 		}
+		
+		
 		
 		for(PhysicsObj obj1 : calcList)
 		{

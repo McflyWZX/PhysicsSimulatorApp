@@ -37,6 +37,11 @@ public class Vector2
 		return vy;
 	}
 	
+	public Vector2 getScreenVector()
+	{
+		return this.scale(PSconst.scaleSceern);
+	}
+	
 	public Vector2 add(Vector2 v1)
 	{
 		return new Vector2(v1.vx + this.vx, v1.vy + this.vy);

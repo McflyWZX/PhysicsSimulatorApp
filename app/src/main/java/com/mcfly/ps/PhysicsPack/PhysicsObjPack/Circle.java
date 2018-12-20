@@ -5,13 +5,13 @@ import com.mcfly.ps.PhysicsPack.*;
 
 public class Circle extends PhysicsObj implements Graphic
 {
-	float R;
+	float R, dR;
 
 	public Circle(float mass, float R, Vector2 po)
 	{
 
 		this.mass = mass;
-		this.R = R * PSconst.scaleSceern;
+		this.dR = R * PSconst.scaleSceern;
 		this.position = po;
 		velocity = new Vector2(0, 0);
 		acceleration = new Vector2(0, 0);
@@ -32,7 +32,7 @@ public class Circle extends PhysicsObj implements Graphic
 	public void draw(Canvas ca, Paint pa)
 	{
 		// TODO: Implement this method
-		ca.drawCircle((float)drawPosition.getX(), (float)drawPosition.getY(), R, pa);
+		ca.drawCircle((float)position.getScreenVector().getX(), (float)position.getScreenVector().getY(), dR, pa);
 		//ca.drawText("drawPosition" + R, 100, 100, pa);
 	}
 	

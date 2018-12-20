@@ -155,7 +155,9 @@ public abstract class PhysicsSurfaceView extends SurfaceView implements Callback
 			c.drawLine(10, 10, PSconst.scaleSceern + 10, 10, paint);
 			paint.setColor(Color.RED);
 			c.drawLine(10, 10, 10, PSconst.scaleSceern + 10, paint);
-			paint.setStrokeWidth(10);
+			paint.setStrokeWidth(3);
+			paint.setStyle(Paint.Style.FILL_AND_STROKE);
+			
 			paint.setColor(Color.CYAN);
 			for(Graphic obj: graphic)
 			{

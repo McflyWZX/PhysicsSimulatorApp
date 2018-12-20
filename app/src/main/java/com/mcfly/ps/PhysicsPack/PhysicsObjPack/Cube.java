@@ -6,14 +6,14 @@ import com.mcfly.ps.PhysicsPack.*;
 
 public class Cube extends PhysicsObj implements Graphic
 {
-	float H, W;
+	float H, W, dH, dW;
 	
 	public Cube(float mass, float W, float H, Vector2 po)
 	{
 		
 		this.mass = mass;
-		this.H = H * PSconst.scaleSceern;
-		this.W = W * PSconst.scaleSceern;
+		this.dH = H * PSconst.scaleSceern;
+		this.dW = W * PSconst.scaleSceern;
 		this.position = po;
 		velocity = new Vector2(0, 0);
 		acceleration = new Vector2(0, 0);
@@ -36,12 +36,13 @@ public class Cube extends PhysicsObj implements Graphic
 	{
 		// TODO: Implement this method
 		
-		float X = (float)drawPosition.getX(), Y = (float)drawPosition.getY();
-		float hW = W / 2, hY = H / 2;
-		ca.drawLine(X - hW, Y - hY, X + hW, Y - hY, pa);
+		float X = (float)position.getScreenVector().getX(), Y = (float)position.getScreenVector().getY();
+		float hW = dW / 2, hY = dH / 2;
+		/*ca.drawLine(X - hW, Y - hY, X + hW, Y - hY, pa);
 		ca.drawLine(X - hW, Y + hY, X + hW, Y + hY, pa);
 		ca.drawLine(X + hW, Y - hY, X + hW, Y + hY, pa);
-		ca.drawLine(X - hW, Y - hY, X - hW, Y + hY, pa);
+		ca.drawLine(X - hW, Y - hY, X - hW, Y + hY, pa);*/
+		ca.drawRect(X - hW, Y + hY, X + hW, Y - hY, pa);
 		
 	}
 

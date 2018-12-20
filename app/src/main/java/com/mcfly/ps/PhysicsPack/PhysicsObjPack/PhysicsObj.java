@@ -7,7 +7,7 @@ public abstract class PhysicsObj implements Graphic
 	public float mass, q;
 	public boolean fixed;
 	public Vector2 position, velocity, acceleration, Rotation, RotateCenter;
-	Vector2 drawPosition;
+	//Vector2 drawPosition;
 	ArrayList<Vector2> forces;
 	
 	Vector2 resultantForce(int i)
@@ -40,7 +40,7 @@ public abstract class PhysicsObj implements Graphic
 		acceleration = resultantForce(0).scale(1 / mass);
 		velocity = velocity.add(acceleration.scale(PSconst.frameT * 1f));
 		position = position.add(velocity.scale(PSconst.frameT * 1f));
-		drawPosition = position.scale(PSconst.scaleSceern);
+		//drawPosition = position.scale(PSconst.scaleSceern);
 	}
 	
 	void addObjToPhysicsSystem()
